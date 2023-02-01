@@ -1,7 +1,5 @@
-import Menu from "../Menu";
 import CallItem from "./CallItem";
 import useCallData from "../../hooks/useCallData";
-import useViewMode from "../../hooks/useViewMode";
 import "../../styles/CallList.scss";
 
 const CallList = function({ mode }) {
