@@ -2,6 +2,8 @@
 
 This project's boilerplate was created with [Create React App](https://github.com/facebook/create-react-app) and [Speer's Aircall Boilerplate](https://github.com/speer-technologies/aircall).
 
+This app was scrapped together in one sleep deprived 24 hours by [me (Sachieko)](https://github.com/sachieko)! There is a lot I would improve and change, such as grouping calls by day in a list, importing actually decent icons and so on.
+
 ## Getting Started
 
 I used `npm` here, you would have to configure it for `yarn`.
