@@ -1,4 +1,4 @@
-const CallItem = function( {call} ) {
+const CallItem = function( {call, archive, details} ) {
   const {
     id,
     direction,
@@ -11,7 +11,7 @@ const CallItem = function( {call} ) {
     call_type
   } = call;
   return (
-    <div>This is a call item. The id is {id} and it was created at {created_at}.</div>
+    <div className="call-item">This is a call item. The id is {id} and it was created at {created_at}.</div>
   );
 };
 

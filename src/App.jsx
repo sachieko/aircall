@@ -1,6 +1,6 @@
 import './styles/App.scss';
 import Header from './components/Header';
-import ActivityList from './components/ActivityList';
+import CallList from './components/CallList';
 
 const App = () => {
 
@@ -8,7 +8,7 @@ const App = () => {
     <div className='container'>
       <Header/>
       <div className="container-view">
-        <ActivityList />
+        <CallList />
         </div>
     </div>
   );
