@@ -1,14 +1,14 @@
 import CallItem from "../CallItem";
 import useCallData from "../../hooks/useCallData";
 
-const Activity = function() {
+const All = function() {
   const {
     callsState,
     callDetails,
     archiveCall,
   } = useCallData();
-
-  const activeCalls = callsState.filter(call => call['is_archived'] === false).map((call, index) => {
+  
+  const allCalls = callsState.map((call, index) => {
     return (
     <>
     <CallItem key={index} call={call} archive={archiveCall} />
@@ -17,10 +17,10 @@ const Activity = function() {
   });
 
   return (
-    <div className="inbox-activity">
-      {activeCalls}
+    <div className="inbox-all">
+      {allCalls}
     </div>
   );
 };
 
-export default Activity;
+export default All;
