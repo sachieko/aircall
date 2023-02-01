@@ -4,6 +4,11 @@ html, body, #root {
   height: 100%;
   width: 100%;
   background: $background-col;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #root .container {
@@ -16,3 +21,5 @@ html, body, #root {
 #root .container-view {
   padding: 20px;
 }
+
+

@@ -1,4 +1,6 @@
+// General styles for call list
 .call-list {
+  padding-top: 11em;
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -30,38 +32,80 @@
 
 .call-item {
   height: 4em;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.153);
+  }
 }
 
+// For detailed component styles
 .call-item--detailed {
   flex-direction: column;
-  height: 10em;
-  font-size: 3em;
+  height: 8em;
+  font-size: 4em;
+  background-color: rgba(255, 255, 255, 0.153);
+  justify-content: flex-start;
   .call-info {
     display: flex;
+    width: 100%;
+    height: 2em;
     flex-direction: row;
     padding: 1em;
+    justify-content: space-between;
+    align-items: center;
   }
   .call-details {
     display: flex;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
+    font-size: .5em;
+    .call-archive {
+      color: rgba(253, 253, 253, 0.5);
+    }
   }
-
 }
 
+// Specific selectors below
+
+.call-number {
+  width: 10em;
+}
+
+.call-duration {
+  padding: 5px;
+}
+
+.call-type { 
+  padding: 5px;
+}
+
+.call-via {
+  padding: 5px;
+}
 
 .call-time {
   color: #999;
   margin-right: 10px;
   border: 1px dotted whitesmoke;
   border-radius: 5%;
+  height: 1.5em;
+  font-size: 1em;
 }
 
 .call-status {
   display: flex;
   margin: 1em;
   height: 4em;
+  width: 6em;
   font-size: 0.5em;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+}
+// Media queries for responsive styles
+
+@media only screen and (min-width: 600px) {
+  .call-item, .call-item--detailed {
+    font-size: 2em;
+  }
 }

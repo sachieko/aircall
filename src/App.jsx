@@ -1,8 +1,8 @@
-import './styles/App.scss';
 import Header from './components/Header';
 import CallList from './components/CallList';
 import Menu from './components/Menu';
 import useViewMode from './hooks/useViewMode';
+import './styles/App.scss';
 
 const App = () => {
   const { mode, setMode } = useViewMode('ACTIVITY');
