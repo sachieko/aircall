@@ -28,7 +28,7 @@ const CallItem = function({ call, archiveToggle }) {
     <div className="call-number">{from || to || 'Private'}</div>
     <div className={`call-icon ${direction === 'inbound' ? 'inbound-icon' : 'outbound-icon'}`}></div>
     <div className="call-time">{created_at.substring(11,16)}</div>
-    {isArchiving && <div>Archiving..</div>}
+    {isArchiving && is_archived ? <div>Unarchiving..</div> : <div>Archiving..</div>}
     {!is_archived && <Button text={'Archive'} onClick={handleArchive} />}
     {is_archived && <Button text={'Unarchive'} onClick={handleArchive} />}
   </div>

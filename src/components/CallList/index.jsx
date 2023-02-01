@@ -33,7 +33,6 @@ const CallList = function() {
     <CallItem key={call.id} call={call} archiveToggle={archiveCall} />
     );
   });
-
   
   return (
     <>
