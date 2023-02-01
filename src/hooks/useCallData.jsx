@@ -21,7 +21,12 @@ const useCallData = function(props) {
         setCallsState(res.data);
       })
       .catch(err => {
-        console.log(err);
+        if (err.status === 404) {
+          console.log('Error: API Server needs to warm up :)'); // API server is on a free service and is not always up
+        }
+        if (err.status !== 404) {
+          console.log(err);
+        }
       });
   }, []);
 
@@ -42,7 +47,12 @@ const useCallData = function(props) {
         })) 
       })
       .catch(err => {
-        console.log(err);
+        if (err.status === 404) {
+          console.log('Error: API Server needs to warm up :)'); // API server is on a free service and is not always up
+        }
+        if (err.status !== 404) {
+          console.log(err);
+        }
       });
   };
 
