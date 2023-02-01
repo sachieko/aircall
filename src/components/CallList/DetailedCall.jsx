@@ -15,8 +15,8 @@ const DetailedCall = function({
           {isArchiving && is_archived && <div>Unarchiving..</div>}
         </div>
       </div>
+      {is_archived && <div className="call-archive">Archived</div>}
       <div className="call-details">
-        {is_archived && <div className="call-archive">Archived</div>}
         <div className="call-type">Call {callType || 'Unknown'}</div>
         <div className="call-duration">Call lasted {duration} seconds.</div>
         {via && <div className="call-via">Aircall#: {via || 'Unknown'}</div>}
