@@ -2,6 +2,7 @@
 .call-list {
   padding-top: 11em;
   height: 100%;
+  width: 98%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -18,14 +19,19 @@
   padding: 10px;
   border-bottom: 1px dotted #ddd;
 
+  .call-status {
+    width: 7em;
+  }
   .button {
-    font-size: 1em;
+    font-size: 1.5em;
+    width: 4.5em;
     background-color: rgba(253, 253, 253, 0.5);
     border: 1px solid white;
     padding: 8px;
     border-radius: 0.2em;
     &:hover {
       border: 2px solid green;
+      cursor: pointer;
     }
   }
 }
@@ -69,7 +75,7 @@
 // Specific selectors below
 
 .call-number {
-  width: 10em;
+  width: 8em;
 }
 
 .call-duration {
@@ -97,7 +103,6 @@
   display: flex;
   margin: 1em;
   height: 4em;
-  width: 6em;
   font-size: 0.5em;
   flex-direction: column;
   align-items: flex-start;

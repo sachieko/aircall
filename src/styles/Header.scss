@@ -33,6 +33,7 @@ header svg {
     font-size: 2em;
     &:hover {
       border-bottom: 2px solid green;
+      cursor: pointer;
     }
   }
   .selected {
