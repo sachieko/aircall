@@ -25,14 +25,21 @@ const useCallData = function(props) {
       });
   }, []);
 
-  const archiveCall = function(id, archived) {
+  // Makes an api patch req using axios for the call of the id, and will change it between true and false.
+  // It will then update the callsState so it updates for the user on a successful response. 
+  const archiveToggle = function(id, archived) {
     const data = {
       'is_archived': !archived
     };
     const url = `/activities/${id}`;
-    axios.patch(url, data, config)
+    return axios.patch(url, data, config)
       .then(res => {
-        console.log(res);
+        setCallsState(prevCalls => prevCalls.map(call => {
+          if (call.id === id) {
+            return { ...call, ...data};
+          }
+          return call;
+        })) 
       })
       .catch(err => {
         console.log(err);
@@ -52,7 +59,7 @@ const useCallData = function(props) {
 
   return {
     callsState,
-    archiveCall,
+    archiveCall: archiveToggle,
     getCallDetails,
     callDetails
   }

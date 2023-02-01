@@ -1,5 +1,38 @@
+.call-list {
+  height: 40em;
+  overflow-y:auto;
+}
+
 .call-item {
-  background-color: #4c4c4c;
-  color: white;
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.call-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.call-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.call-time {
+  font-size: 14px;
+  color: #999;
+  margin-right: 10px;
+}
+
+.archive-button {
+  padding: 5px 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
