@@ -2,7 +2,6 @@ import Menu from "../Menu";
 import CallItem from "./CallItem";
 import useCallData from "../../hooks/useCallData";
 import useViewMode from "../../hooks/useViewMode";
-import Loading from "./Loading";
 import "../../styles/CallList.scss";
 
 const CallList = function() {

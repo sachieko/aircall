@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "../Button";
-import Loading from "./Loading";
 
 const CallItem = function({ call, archiveToggle }) {
   const [isArchiving, setIsArchiving] = useState(false);
@@ -28,7 +27,7 @@ const CallItem = function({ call, archiveToggle }) {
     <div className="call-item">
     <div className="call-number">{from || to}</div>
     <div className={`call-icon ${direction === 'inbound' ? 'inbound-icon' : 'outbound-icon'}`}></div>
-    <div className="call-time">{created_at}</div>
+    <div className="call-time">{created_at.substring(11,16)}</div>
     {isArchiving && <div>Archiving..</div>}
     {!is_archived && <Button text={'Archive'} onClick={handleArchive} />}
     {is_archived && <Button text={'Unarchive'} onClick={handleArchive} />}
