@@ -47,10 +47,10 @@ const useCallData = function(props) {
         })) 
       })
       .catch(err => {
-        if (err.status === 404) {
-          console.log('Error: API Server needs to warm up :)'); // API server is on a free service and is not always up
+        if (err.response.status === 404) {
+          console.log('Error: API Server needs to warm up :) or these are meant to fail to update'); // API server is on a free service and is not always up
         }
-        if (err.status !== 404) {
+        if (err.response.status !== 404) {
           console.log(err);
         }
       });

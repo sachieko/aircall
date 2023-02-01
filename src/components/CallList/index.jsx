@@ -4,7 +4,7 @@ import useCallData from "../../hooks/useCallData";
 import useViewMode from "../../hooks/useViewMode";
 import "../../styles/CallList.scss";
 
-const CallList = function() {
+const CallList = function({ mode }) {
   const {
     callsState,
     archiveCall
@@ -14,7 +14,6 @@ const CallList = function() {
   const ALL = 'ALL';
   const ARCHIVED = 'ARCHIVED';
 
-  const { mode, setMode } = useViewMode(ACTIVITY);
   // Make an array of only archived calls
   const archivedCalls = callsState.filter(call => call['is_archived'] === true).map((call) => {
     return (
@@ -36,7 +35,6 @@ const CallList = function() {
   
   return (
     <>
-    <Menu setMode={setMode} />
     <section className="call-list">
       {mode === ACTIVITY && activeCalls}
       {mode === ALL && allCalls}

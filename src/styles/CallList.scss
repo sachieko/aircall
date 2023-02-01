@@ -1,6 +1,5 @@
 .call-list {
-  height: 40em;
-  overflow-y:auto;
+  height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -9,36 +8,61 @@
   display: none;
 }
 
-.call-item {
+.call-item, .call-item--detailed {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  font-size: 4em;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dotted #ddd;
+
+  .button {
+    font-size: 1em;
+    background-color: rgba(253, 253, 253, 0.5);
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 0.2em;
+    &:hover {
+      border: 2px solid green;
+    }
+  }
 }
 
-.call-number {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 10px;
+.call-item {
+  height: 4em;
 }
 
-.call-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  background-size: cover;
+.call-item--detailed {
+  flex-direction: column;
+  height: 10em;
+  font-size: 3em;
+  .call-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 1em;
+  }
+  .call-details {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
+
 
 .call-time {
-  font-size: 14px;
   color: #999;
   margin-right: 10px;
+  border: 1px dotted whitesmoke;
+  border-radius: 5%;
 }
 
-.archive-button {
-  padding: 5px 10px;
-  background-color: #ddd;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.call-status {
+  display: flex;
+  margin: 1em;
+  height: 4em;
+  font-size: 0.5em;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }

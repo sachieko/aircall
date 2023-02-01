@@ -1,8 +1,10 @@
 import { useState } from "react";
-import Button from "../Button";
+import DetailedCall from "./DetailedCall";
+import PlainCall from "./PlainCall";
 
 const CallItem = function({ call, archiveToggle }) {
   const [isArchiving, setIsArchiving] = useState(false);
+  const [selected, setSelected] = useState(false);
   const {
     id,
     direction,
@@ -21,17 +23,40 @@ const CallItem = function({ call, archiveToggle }) {
       .then(res => {
         setIsArchiving(false);
       });
-  };;
+  };
+
+  const handleClick = () => {
+    setSelected(!selected); // toggles whether to show details or not
+  };
 
   return (
-    <div className="call-item">
-    <div className="call-number">{from || to || 'Private'}</div>
-    <div className={`call-icon ${direction === 'inbound' ? 'inbound-icon' : 'outbound-icon'}`}></div>
-    <div className="call-time">{created_at.substring(11,16)}</div>
-    {isArchiving && is_archived ? <div>Unarchiving..</div> : <div>Archiving..</div>}
-    {!is_archived && <Button text={'Archive'} onClick={handleArchive} />}
-    {is_archived && <Button text={'Unarchive'} onClick={handleArchive} />}
-  </div>
+    <>
+    {!selected ? (
+      <PlainCall 
+        key={id}
+        number={from || to || 'Private'}
+        time={created_at.substring(11,16)}
+        direction={direction}
+        is_archived={is_archived}
+        isArchiving={isArchiving}
+        handleArchive={handleArchive}
+        onClick={handleClick}
+        /> ) : (
+      <DetailedCall
+        key={id}
+        number={from || to || 'Private'}
+        time={created_at.substring(11,16)}
+        direction={direction}
+        is_archived={is_archived}
+        via={via}
+        duration={duration}
+        callType={call_type}
+        isArchiving={isArchiving}
+        handleArchive={handleArchive}
+        onClick={handleClick}
+        />
+      )}
+    </>
   );
 };
 
