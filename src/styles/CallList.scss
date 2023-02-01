@@ -1,6 +1,6 @@
 // General styles for call list
 .call-list {
-  padding-top: 11em;
+  padding-top: 14em;
   height: 100%;
   width: 98%;
   -ms-overflow-style: none;
@@ -35,7 +35,7 @@
 }
 
 .call-item {
-  height: 4em;
+  font-size: 3em;
   &:hover {
     background-color: rgba(255, 255, 255, 0.153);
   }
@@ -44,7 +44,7 @@
 // For detailed component styles
 .call-item--detailed {
   flex-direction: column;
-  height: 8em;
+  height: 9em;
   font-size: 4em;
   background-color: rgba(255, 255, 255, 0.153);
   justify-content: flex-start;
@@ -108,9 +108,17 @@
 }
 // Media queries for responsive styles
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-device-width: 600px) {
+  .call-list {
+    padding-top: 10em;
+  }
+
   .call-item, .call-item--detailed {
     font-size: 2em;
+  }
+
+  .call-item--detailed {
+    height: 8em;
   }
 
   .call-item--detailed .call-details {

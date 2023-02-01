@@ -29,21 +29,19 @@ header svg {
   justify-content: space-around;
   border-bottom: 1px solid white;
   .button {
-    height: 3em;
-    font-size: 2em;
+    font-size: 3em;
     &:hover {
       border-bottom: 2px solid green;
       cursor: pointer;
     }
   }
   .selected {
-    height: 3em;
-    font-size: 2em;
+    font-size: 3em;
     border-bottom: 2px solid rgba(63, 98, 236, 0.496);
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-device-width: 768px) {
   header {
     height: 4em;
   }
