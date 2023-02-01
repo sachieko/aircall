@@ -35,7 +35,7 @@ const CallItem = function({ call, archiveToggle }) {
       <PlainCall 
         key={id}
         number={from || to || 'Private'}
-        time={created_at.substring(11,16)}
+        date={created_at}
         direction={direction}
         is_archived={is_archived}
         isArchiving={isArchiving}
@@ -45,7 +45,7 @@ const CallItem = function({ call, archiveToggle }) {
       <DetailedCall
         key={id}
         number={from || to || 'Private'}
-        time={created_at.substring(11,16)}
+        date={created_at}
         direction={direction}
         is_archived={is_archived}
         via={via}

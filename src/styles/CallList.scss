@@ -13,9 +13,11 @@
 
 .call-item, .call-item--detailed {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
+  font-size: 4em;
   border-bottom: 1px dotted #ddd;
   .call-status {
     width: 7em;
@@ -35,7 +37,13 @@
 }
 
 .call-item {
-  font-size: 3em;
+  .call-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   &:hover {
     background-color: rgba(255, 255, 255, 0.153);
   }
@@ -43,9 +51,7 @@
 
 // For detailed component styles
 .call-item--detailed {
-  flex-direction: column;
-  height: 9em;
-  font-size: 4em;
+  height: 11em;
   background-color: rgba(255, 255, 255, 0.153);
   justify-content: flex-start;
   .call-info {
@@ -62,10 +68,8 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    font-size: .8em;
   }
   .call-archive {
-    font-size: .8em;
     color: rgba(253, 253, 253, 0.5);
   }
 }
@@ -73,7 +77,12 @@
 // Specific selectors below
 
 .call-number {
-  width: 8em;
+  width: 6em;
+}
+
+.call-date {
+  padding-bottom: 8px;
+  height: 1.5em;
 }
 
 .call-duration {
@@ -117,7 +126,7 @@
   }
 
   .call-item, .call-item--detailed {
-    font-size: 2em;
+    font-size: 1.2em;
   }
 
   .call-item--detailed {
