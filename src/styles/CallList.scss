@@ -1,6 +1,12 @@
 .call-list {
   height: 40em;
   overflow-y:auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.call-list::-webkit-scrollbar {
+  display: none;
 }
 
 .call-item {
